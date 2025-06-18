@@ -1,0 +1,1 @@
+forge script OneWordStory.s.sol:OneWordStoryScript --rpc-url http://localhost:8545 --broadcast

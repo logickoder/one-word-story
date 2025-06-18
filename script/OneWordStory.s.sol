@@ -5,15 +5,17 @@ import {Script, console} from "forge-std/Script.sol";
 import {OneWordStory} from "../src/OneWordStory.sol";
 
 contract OneWordStoryScript is Script {
-    OneWordStory public counter;
+    OneWordStory public story;
 
     function setUp() public {}
 
     function run() public {
-        vm.startBroadcast();
+        vm.startBroadcast(vm.envUint("PRIVATE_KEY"));
 
-        counter = new OneWordStory();
+        story = new OneWordStory();
 
         vm.stopBroadcast();
+
+        console.log("One Word Story deployed to:", address(story));
     }
 }
